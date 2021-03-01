@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+//up func
+//down func
+//left func
+//right func
+
+int main(){
+    
+    return 0;
+}
