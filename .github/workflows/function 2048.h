@@ -42,36 +42,36 @@ void up(int a[N][N])
 //func down
 void down(int a[N][N])
 {
-	int i,j,li,ri;
+	int i,j,x,y;
 	for(j=0;j<N;j++)
 	{
-		li=3,ri=j;
+		x=3,y=j;
 		for(i=2;i>=0;i--)
 		{
 			if(a[i][j]!=0)
 			{
 				if(a[i+1][j]==0 || a[i+1][j]==a[i][j])
 				{
-					if(a[li][ri]==a[i][j])
+					if(a[x][y]==a[i][j])
 					{
-						a[li][ri]*=2;
+						a[x][y]*=2;
 						a[i][j]=0;
 					}
 					else
 					{
-						if(a[li][ri]==0)
+						if(a[x][y]==0)
 						{
-							a[li][ri]=a[i][j];
+							a[x][y]=a[i][j];
 							a[i][j]=0;
 						}
 						else
 						{
-							a[--li][ri]=a[i][j];
+							a[--x][y]=a[i][j];
 							a[i][j]=0;
 						}
 					}
 				}
-				else li--;
+				else x--;
 			}
 		}
 	}
@@ -79,36 +79,36 @@ void down(int a[N][N])
 //func left
 void left(int a[N][N])
 {
-	int i,j,li,ri;
+	int i,j,x,y;
 	for(i=0;i<N;i++)
 	{
-		li=i,ri=0;
+		x=i,y=0;
 		for(j=1;j<N;j++)
 		{
 			if(a[i][j]!=0)
 			{
 				if(a[i][j-1]==0 || a[i][j-1]==a[i][j])
 				{
-					if(a[li][ri]==a[i][j])
+					if(a[x][y]==a[i][j])
 					{
-						a[li][ri]*=2;
+						a[x][y]*=2;
 						a[i][j]=0;
 					}
 					else
 					{
-						if(a[li][ri]==0)
+						if(a[x][y]==0)
 						{
-							a[li][ri]=a[i][j];
+							a[x][y]=a[i][j];
 							a[i][j]=0;
 						}
 						else
 						{
-							a[li][++ri]=a[i][j];
+							a[x][++y]=a[i][j];
 							a[i][j]=0;
 						}
 					}
 				}
-				else ri++;
+				else y++;
 			}
 		}
 	}
@@ -116,42 +116,39 @@ void left(int a[N][N])
 //func right
 void right(int a[N][N])
 {
-	int i,j,li,ri;
+	int i,j,x,y;
 	for(i=0;i<N;i++)
 	{
-		li=i,ri=3;
+		x=i,y=3;
 		for(j=2;j>=0;j--)
 		{
 			if(a[i][j]!=0)
 			{
 				if(a[i][j+1]==0 || a[i][j+1]==a[i][j])
 				{
-					if(a[li][ri]==a[i][j])
+					if(a[x][y]==a[i][j])
 					{
-						a[li][ri]*=2;
+						a[x][y]*=2;
 						a[i][j]=0;
 					}
 					else
 					{
-						if(a[li][ri]==0)
+						if(a[x][y]==0)
 						{
-							a[li][ri]=a[i][j];
+							a[x][y]=a[i][j];
 							a[i][j]=0;
 						}
 						else
 						{
-							a[li][--ri]=a[i][j];
+							a[x][--y]=a[i][j];
 							a[i][j]=0;
 						}
 					}
 				}
-				else ri--;
+				else y--;
 			}
 		}
 	}
 }
 
-int main(){
 
-  return 0;
-}
