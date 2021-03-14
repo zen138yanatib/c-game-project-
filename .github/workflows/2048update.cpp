@@ -228,13 +228,9 @@ int main(){
 		addblock(a);
 		disp(a);
 	}
+	while(true){
 	cin >> comm;
 	command(comm);
-	cin >> comm;
-	command(comm);
-	cin >> comm;
-	command(comm);
-	cin >> comm;
-	command(comm);
+	}
     return 0;
 }
