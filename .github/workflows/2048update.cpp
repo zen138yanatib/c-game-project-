@@ -121,7 +121,7 @@ void addblock(int a[4][4])
 		y=rand()%4;
 		if(a[x][y]==0)
 		{
-			a[x][y]=pow(2,x%2 + 1);
+			a[x][y]=2;
 			break;
 		}
 	}
@@ -193,50 +193,48 @@ int checkover(int a[4][4])
 	else return 0;
 }
 
+void command(char command){
+	int a[4][4] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+	if(command == 'w'){
+		up(a);
+		checkover(a);
+		addblock(a);
+		disp(a);
+	}else if(command == 's'){
+		down(a);
+		checkover(a);
+		addblock(a);
+		disp(a);
+	}else if(command == 'a'){
+		left(a);
+		checkover(a);
+		addblock(a);
+		disp(a);
+	}else if(command == 'd'){
+		right(a);
+		checkover(a);
+		addblock(a);
+		disp(a);
+	}	
+}
+
 int main(){
-	srand(time(0));
-	char commandtodir[128];
-	commandtodir['W'] = 0;
-	commandtodir['S'] = 0;
-	commandtodir['A'] = 0;
-	commandtodir['D'] = 0;
-    int a[4][4] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-	char command;
+	int a[4][4] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+	char comm;
 	//cout << "Do you want to play 2048???\n";
 	//cout << "Press n to play!!!!!";
-	cin >> command;
-	if(command == 'n'){
+	cin >> comm;
+	if(comm == 'n'){
 		addblock(a);
 		disp(a);
 	}
-	cin >> command;
-	if(command == 'w'){
-		up(a);
-		disp(a);
-		addblock(a);
-		checkover(a);
-		addblock(a);
-	}else if(command == 's'){
-		down(a);
-		disp(a);
-		addblock(a);
-		disp(a);
-		checkover(a);
-		addblock(a);
-	}else if(command == 'a'){
-		left(a);
-		disp(a);
-		addblock(a);
-		disp(a);
-		checkover(a);
-		addblock(a);
-	}else if(command == 'd'){
-		right(a);
-		disp(a);
-		addblock(a);
-		disp(a);
-		checkover(a);
-		addblock(a);
-	}	
+	cin >> comm;
+	command(comm);
+	cin >> comm;
+	command(comm);
+	cin >> comm;
+	command(comm);
+	cin >> comm;
+	command(comm);
     return 0;
 }
