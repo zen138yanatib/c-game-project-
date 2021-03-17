@@ -60,6 +60,23 @@ header > section h1{
     font-size: 3rem;
 }
 
+input[type=submit]{
+    padding: 6px 20px;
+    cursor: pointer;
+    border: 0px;
+    background: rgb(175, 66, 66);
+    position: relative;
+    margin: 10px;
+    transition: all 0.25s ease;
+}
+
+input[type=text]{
+    padding: 4px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 button{
     padding: 6px 20px;
     cursor: pointer;
@@ -137,6 +154,52 @@ footer{
   text-align: center;
 }
 
-input[type=text], select {
-   
-  }
+.user{
+    margin-top: 1rem;
+    margin-right: 1rem;
+    
+}
+
+.score{
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.tables{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-family: sans-serif;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-left: 1rem;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.tables thead tr {
+    background-color: rgb(187, 72, 72);
+    color: #ffffff;
+    text-align: left;
+}
+
+.tables th, .tables td{
+    padding:  12px 15px;
+}
+
+.tables tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+
+.tables tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+.tables tbody tr:last-of-type{
+    border-bottom: 2px solid rgb(156, 37, 37);
+}
+
+.tables tbody tr.active-row{
+    font-weight: bold;
+    color: rgb(156, 37, 37); 
+}
