@@ -54,7 +54,7 @@ header{
     display: flex;
     justify-content: space-between;
     height:180px;
-    background: url("window.jpg") no-repeat;
+    background: url("bb.png") no-repeat;
     background-size: cover;
     background-position: bottom;
     overflow: hidden;
@@ -229,4 +229,8 @@ footer{
     border-radius: 10px;
     margin: 4px;
     padding: 5px;
+}
+
+section.control{
+    vertical-align: bottom;
 }
